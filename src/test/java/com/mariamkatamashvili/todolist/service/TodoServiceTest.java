@@ -154,7 +154,7 @@ class TodoServiceTest {
 
         when(todoRepository.findByTitleAndUsername("title", "user")).thenReturn(Optional.of(todo));
         when(todoRepository.save(any(Todo.class))).thenReturn(todo);
-        when(todoMapper.todoEntityToTodoInfoDto(todo)).thenReturn(expected);
+        when(todoMapper.todoEntityToTodoInfo(todo)).thenReturn(expected);
 
         TodoInfoDTO actual = todoService.updateTodo("user", "title", todoInfo);
 

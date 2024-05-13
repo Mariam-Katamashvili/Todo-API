@@ -16,10 +16,10 @@ import lombok.Setter;
 @Entity
 @Table(name = "todos")
 @Builder
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Todo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

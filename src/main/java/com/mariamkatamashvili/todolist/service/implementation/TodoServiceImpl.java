@@ -70,7 +70,7 @@ public class TodoServiceImpl implements TodoService {
         List<TodoInfoDTO> todoInfos = new ArrayList<>();
 
         todos
-                .forEach(todo -> todoInfos.add(todoMapper.todoEntityToTodoInfoDto(todo)));
+                .forEach(todo -> todoInfos.add(todoMapper.todoEntityToTodoInfo(todo)));
 
         return todoInfos;
     }
@@ -86,7 +86,7 @@ public class TodoServiceImpl implements TodoService {
         todo.setTitle(todoInfo.getTitle());
         todo.setDescription(todoInfo.getDescription());
         todo = todoRepository.save(todo);
-        return todoMapper.todoEntityToTodoInfoDto(todo);
+        return todoMapper.todoEntityToTodoInfo(todo);
     }
 
     @Override

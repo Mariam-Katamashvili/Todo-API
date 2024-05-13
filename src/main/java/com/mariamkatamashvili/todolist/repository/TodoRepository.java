@@ -13,6 +13,7 @@ import java.util.Optional;
 public interface TodoRepository extends JpaRepository<Todo, Long> {
     @Query("select t from Todo t where t.user.username = :username")
     List<Todo> findByUserUsername(@Param("username") String username);
+    
     @Query("select t from Todo t where t.title = :title and t.user.username = :username")
     Optional<Todo> findByTitleAndUsername(@Param("title") String title, @Param("username") String username);
 }
